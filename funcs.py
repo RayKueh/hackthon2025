@@ -104,7 +104,7 @@ def plot_mjo_phase_space_ax(ax):
     ax.set_ylabel('RMM2')
     ax.grid(True)
 
-def plot_kw_phase_space_ax(ax,amp=300,std=100,scale=80):
+def plot_kw_phase_space_ax(ax,amp=300,std=100,scale=80,cle_color = 'orange'):
     import numpy as np
     import matplotlib.lines as lines
 
@@ -124,7 +124,8 @@ def plot_kw_phase_space_ax(ax,amp=300,std=100,scale=80):
     ax.add_line(lines.Line2D([0, 0], [std, amp], color='black', linestyle='--', lw=1))
     ax.add_line(lines.Line2D([0, 0], [-std, -amp], color='black', linestyle='--', lw=1))
 
-    amp1_circ = plt.Circle((0, 0), std, color='orange',alpha=0.3, fill=True)
+    
+    amp1_circ = plt.Circle((0, 0), std, color=cle_color,alpha=0.3, fill=True)
     ax.add_patch(amp1_circ)
 
     # add phase diagram texts
